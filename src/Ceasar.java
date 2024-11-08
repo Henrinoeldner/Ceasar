@@ -2,7 +2,7 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Ceasar {
     private String gt;
-    private String Kt;
+    private String kt;
     private int schluessel;
 
     public Ceasar(){
@@ -26,7 +26,13 @@ public class Ceasar {
     }
 
     public void setGt(String pGt){
-
+        gt=pGt;
+    }
+    public String getKt(){
+        return kt;
+    }
+    public void setKt(String pKt){
+        kt=pKt;
     }
 
 
