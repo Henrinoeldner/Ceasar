@@ -15,10 +15,10 @@ public class Ceasar {
 
     }
     private char getChar(int pWert){
-        return 'i';
+        return (char) pWert;
     }
     private int getAscif(char pWert){
-        return 1;
+        return (int) pWert;
     }
 
     public String getGt(){
