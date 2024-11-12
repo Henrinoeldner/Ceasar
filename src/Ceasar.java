@@ -11,16 +11,19 @@ public class Ceasar {
         s=0;
     }
     public void verschluesseln(){
+        gt="";
     for(int i=0;i<kt.length();i++){
-        int h = this.getAscif(kt.charAt(i))+s;
-        gt= gt+ this.getChar(h);
+        int h = this.getAscif(kt.charAt(i));
+        gt= gt+ (this.getChar((h+s-65) % 25 +65));
     }
     }
     public void entschluesseln(){
         for(int i=0;i<gt.length();i++) {
-            int h = this.getAscif(gt.charAt(i)) + s;
-            kt = kt + this.getChar(h);
+            int h = this.getAscif(gt.charAt(i));
+            kt = kt + this.getChar((h-s-65)%25 +65);
         }
+
+
     }
     private char getChar(int pWert){
         return (char) pWert;

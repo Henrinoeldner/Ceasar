@@ -30,7 +30,7 @@ public class verwaltung {
             }
             if (option==2){
                 ceasar.verschluesseln();
-                System.out.println("Der verschlüsselte satzt ist"+ceasar.getGt());
+                System.out.println("Der verschlüsselte satzt ist " +ceasar.getGt());
 
             }
         }
