@@ -12,10 +12,10 @@ public class Ceasar {
     }
     public void verschluesseln(){
         gt="";
-    for(int i=0;i<kt.length();i++){
-        int h = this.getAscif(kt.charAt(i));
-        gt= gt+ (this.getChar((h+s-65) % 25 +65));
-    }
+        for(int i=0;i<kt.length();i++){
+            int h = this.getAscif(kt.charAt(i));
+            gt= gt + this.getChar((h+s-65) % 25 +65);
+        }
     }
     public void entschluesseln(){
         for(int i=0;i<gt.length();i++) {
@@ -31,11 +31,9 @@ public class Ceasar {
     private int getAscif(char pWert){
         return (int) pWert;
     }
-
     public String getGt(){
         return gt;
     }
-
     public void setGt(String pGt){
         gt=pGt;
     }
