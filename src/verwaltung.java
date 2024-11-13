@@ -27,10 +27,16 @@ public class verwaltung {
                 System.out.println("Bitte gib den zu Schlüssel an");
                 option=scanner.nextInt();
                 ceasar.setS(option);
+                ceasar.verschluesseln();
             }
             if (option==2){
                 ceasar.verschluesseln();
                 System.out.println("Der verschlüsselte satzt ist " +ceasar.getGt());
+
+            }
+            if (option==3){
+                ceasar.entschluesseln();
+                System.out.println("Dein satz ist "+ ceasar.getKt());
 
             }
         }

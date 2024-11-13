@@ -14,13 +14,14 @@ public class Ceasar {
         gt="";
         for(int i=0;i<kt.length();i++){
             int h = this.getAscif(kt.charAt(i));
-            gt= gt + this.getChar((h+s-65) % 25 +65);
+            gt= gt + this.getChar(h+(s%25));
         }
     }
     public void entschluesseln(){
+        kt="";
         for(int i=0;i<gt.length();i++) {
             int h = this.getAscif(gt.charAt(i));
-            kt = kt + this.getChar((h-s-65)%25 +65);
+            kt = kt + this.getChar(h-(s%25));
         }
 
 
