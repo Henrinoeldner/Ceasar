@@ -21,7 +21,7 @@ public class Ceasar {
         kt="";
         for(int i=0;i<gt.length();i++) {
             int h = this.getAscif(gt.charAt(i));
-            kt = kt + this.getChar(h-(s%25));
+            kt +=  this.getChar(h-(s%25));
         }
 
 
