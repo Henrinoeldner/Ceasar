@@ -15,9 +15,8 @@ public class verwaltung {
         ceasar= new Ceasar();
         while (true) {
             System.out.println("== HAUPTMENÜ ==");
-            System.out.println("[1] Ceaser verschlüsselung");
-            System.out.println("[2] verschlüsselte wort ausgeben");
-            System.out.println("[3] Entschlüsseltes wort ausgeben");
+            System.out.println("[1] Ein Wort verschlüsseln (Benötigt ein KlarText und ein Schluessel)");
+            System.out.println("[2] Ein wort entschlüsseln(benoetigt ein GeheimText und ein Schlussel)");
 
             int option = scanner.nextInt();
             if (option==1){
@@ -28,15 +27,20 @@ public class verwaltung {
                 option=scanner.nextInt();
                 ceasar.setS(option);
                 ceasar.verschluesseln();
+                System.out.println("Dein verschluesselte wort ist: "+ceasar.getGt());
             }
             if (option==2){
-                ceasar.verschluesseln();
-                System.out.println("Der verschlüsselte satzt ist " +ceasar.getGt());
+                System.out.println("Bitte gib den verschlüsselten text an");
+                String optionString = scanner.next();
+                ceasar.setGt(optionString);
+                System.out.println("Bitte gib den zu Schlüssel an");
+                option=scanner.nextInt();
+                ceasar.setS(option);
+                ceasar.entschluesseln();
+                System.out.println("Der Klartext ist " +ceasar.getKt());
 
             }
             if (option==3){
-                ceasar.entschluesseln();
-                System.out.println("Dein satz ist "+ ceasar.getKt());
 
             }
         }
