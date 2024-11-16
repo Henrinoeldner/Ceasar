@@ -14,18 +14,17 @@ public class Vigenere {
         gt="";
         for(int i=0;i<kt.length();i++){
             int h = this.getAscif(kt.charAt(i));
-            gt= gt + this.getChar(h+(s.charAt(i%s.length())%25));
+            gt= gt + this.getChar((h+((s.charAt(i%s.length())-65)%25)-64)%32 + 64);
         }
     }
     public void entschluesseln(){
         kt="";
         for(int i=0;i<gt.length();i++) {
             int h = this.getAscif(gt.charAt(i));
-            kt +=  this.getChar(h-(s.charAt(i%s.length())%25));
+            kt +=  (this.getChar((h-((s.charAt(i%s.length())-65)%25)-64)%32 + 64));
         }
-
-
     }
+
     private char getChar(int pWert){
         return (char) pWert;
     }
@@ -45,9 +44,5 @@ public class Vigenere {
         kt=pKt;
     }
     public String getS(){return s;}
-    public void setS(String pschluessel){s=pschluessel;}
-
-
-
-
-}
+    public void setS(String pschluessel) {s=pschluessel;}
+    }

@@ -79,8 +79,6 @@ public class verwaltung {
                     System.out.println("Der Klartext ist " + vigenere.getKt());
 
                 }
-
-
             }
         }
     }
