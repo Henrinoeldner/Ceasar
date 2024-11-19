@@ -14,14 +14,16 @@ public class Vigenere {
         gt="";
         for(int i=0;i<kt.length();i++){
             int h = this.getAscif(kt.charAt(i));
-            gt= gt + this.getChar((h+((s.charAt(i%s.length())-65)%25)-64)%32 + 64);
+            int stemporer=(s.charAt(i%s.length())-65)%27;
+            gt= gt + this.getChar(h+stemporer);
         }
     }
     public void entschluesseln(){
         kt="";
         for(int i=0;i<gt.length();i++) {
             int h = this.getAscif(gt.charAt(i));
-            kt +=  (this.getChar((h-((s.charAt(i%s.length())-65)%25)-64)%32 + 64));
+            int stemporer=(s.charAt(i%s.length())-65)%27;
+            kt +=  this.getChar(h-stemporer);
         }
     }
 
