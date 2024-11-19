@@ -12,18 +12,23 @@ public class Vigenere {
     }
     public void verschluesseln(){
         gt="";
-        for(int i=0;i<kt.length();i++){
-            int h = this.getAscif(kt.charAt(i));
-            int stemporer=(s.charAt(i%s.length())-65)%27;
-            gt= gt + this.getChar(h+stemporer);
+        String tkt= kt.toUpperCase();
+        System.out.println(kt);
+        String TemporerString= s.toUpperCase();
+        for(int i=0;i<tkt.length();i++){
+            int h = this.getAscif(tkt.charAt(i));
+            int stemporer=( TemporerString.charAt(i%TemporerString.length())-65)%26;
+            gt= gt + this.getChar(((h+stemporer-39)%26)+65) ;
         }
     }
     public void entschluesseln(){
         kt="";
-        for(int i=0;i<gt.length();i++) {
-            int h = this.getAscif(gt.charAt(i));
-            int stemporer=(s.charAt(i%s.length())-65)%27;
-            kt +=  this.getChar(h-stemporer);
+        String tgt= gt.toUpperCase();
+        String TemporerString= s.toUpperCase();
+        for(int i=0;i<tgt.length();i++) {
+            int h = this.getAscif(tgt.charAt(i));
+            int stemporer=(TemporerString.charAt(i%TemporerString.length())-65)%26;
+            kt +=  this.getChar(((h-stemporer-39)%26)+65);
         }
     }
 
