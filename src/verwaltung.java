@@ -30,7 +30,7 @@ public class verwaltung {
                     System.out.println("Bitte gib den zu verschlüsselden text an");
                     String optionString = scanner.next();
                     ceasar.setKt(optionString);
-                    System.out.println("Bitte gib den zu Schlüssel an");
+                    System.out.println("Bitte gib eine Zahl als Schlüssel an");
                     option = scanner.nextInt();
                     ceasar.setS(option);
                     ceasar.verschluesseln();
@@ -40,7 +40,7 @@ public class verwaltung {
                     System.out.println("Bitte gib den verschlüsselten text an");
                     String optionString = scanner.next();
                     ceasar.setGt(optionString);
-                    System.out.println("Bitte gib den zu Schlüssel an");
+                    System.out.println("Bitte gib die Zahl des Schlüssel an");
                     option = scanner.nextInt();
                     ceasar.setS(option);
                     ceasar.entschluesseln();
