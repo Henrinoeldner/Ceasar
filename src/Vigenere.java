@@ -1,8 +1,7 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Vigenere {
-    private String gt;
-    private String kt;
+public class Vigenere extends Kryptomat  {
+
     private String s;
 
     public Vigenere(){
@@ -51,24 +50,7 @@ public class Vigenere {
         }
     }
 
-    private char getChar(int pWert){
-        return (char) pWert;
-    }
-    private int getAscif(char pWert){
-        return (int) pWert;
-    }
-    public String getGt(){
-        return gt;
-    }
-    public void setGt(String pGt){
-        gt=pGt;
-    }
-    public String getKt(){
-        return kt;
-    }
-    public void setKt(String pKt){
-        kt=pKt;
-    }
+
     public String getS(){return s;}
     public void setS(String pschluessel) {s=pschluessel;}
     }
