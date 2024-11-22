@@ -19,6 +19,7 @@ public class verwaltung {
             System.out.println("Bitte weahle mit welcher methode du versclüsseln moechtst");
             System.out.println("[1]Ceasar");
             System.out.println("[2]Vigenere");
+            System.out.println("[3]Beenden");
             int option = scanner.nextInt();
             if(option==1) {
                 ceasar = new Ceasar();
@@ -47,10 +48,6 @@ public class verwaltung {
                     System.out.println("Der Klartext ist " + ceasar.getKt());
 
                 }
-                if (option == 3) {
-
-                }
-
             }else if(option==2){
                 vigenere=new Vigenere();
                 String schluessel;
@@ -79,6 +76,8 @@ public class verwaltung {
                     System.out.println("Der Klartext ist " + vigenere.getKt());
 
                 }
+            }else if (option>2){
+                break;
             }
         }
     }
