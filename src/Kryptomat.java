@@ -3,6 +3,7 @@
 public abstract class Kryptomat {
     protected String gt;
     protected String kt;
+    protected String s;
 
     public Kryptomat(){
     }
@@ -29,4 +30,6 @@ public abstract class Kryptomat {
     public void setKt(String pKt){
         kt=pKt;
     }
+    public String getS(){return s;}
+    public void setS(String pschluessel){s=pschluessel;}
 }
