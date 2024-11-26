@@ -4,11 +4,11 @@ import java.util.Scanner;
 public class verwaltung {
     private Scanner scanner;
 
-    private Kryptomat test;
+    private Kryptomat verschluesseler;
     public static void main(String[] args) {
 
         new verwaltung();
-        System.out.println("Herzlich willkommen zuZeichenketten Tester!");
+        System.out.println("Herzlich willkommen zuZeichenketten verschluesselerer!");
 
     }
     public verwaltung(){
@@ -21,9 +21,9 @@ public class verwaltung {
             System.out.println("[3]Beenden");
             int verschluesselungprinzip = scanner.nextInt();
             if(verschluesselungprinzip==1) {
-                test = new Ceasar();
+                verschluesseler = new Ceasar();
             }else if(verschluesselungprinzip==2){
-                test= new Vigenere();
+                verschluesseler= new Vigenere();
             }else if (verschluesselungprinzip>2){
                 break;
             }
@@ -35,28 +35,28 @@ public class verwaltung {
                 if (option == 1) {
                     System.out.println("Bitte gib den zu verschlüsselden text an. Druecke dann Enter");
                     String optionString = scanner.next();
-                    test.setKt(optionString);
+                    verschluesseler.setKt(optionString);
                     System.out.print("Bitte gib den schlüssel an");
                     if (verschluesselungprinzip==1){System.out.print("(Eine Zahl oder ein Buchstaben)");}
                     else if (verschluesselungprinzip==2) {System.out.print("(Ein Wort)");}
                     System.out.println("Druecke dann Enter.");
                     optionString = scanner.next();
-                    test.setS(optionString);
-                    test.verschluesseln();
-                    System.out.println("Dein verschluesselte wort ist: " + test.getGt());
+                    verschluesseler.setS(optionString);
+                    verschluesseler.verschluesseln();
+                    System.out.println("Dein verschluesselte wort ist: " + verschluesseler.getGt());
                 }
                 if (option == 2) {
                     System.out.println("Bitte gib den verschlüsselten text an. ");
                     String optionString = scanner.next();
-                    test.setGt(optionString);
+                    verschluesseler.setGt(optionString);
                     System.out.print("Bitte den Schlüssel an. Druecke dann Enter.");
                     if (verschluesselungprinzip==1){System.out.print("(Eine Zahl oder ein Buchstaben)");}
                     else if (verschluesselungprinzip==2) {System.out.print("(Ein Wort)");}
                     System.out.println("Druecke dann Enter.");
                     optionString = scanner.next();
-                    test.setS(optionString);
-                    test.entschluesseln();
-                    System.out.println("Der Klartext ist " + test.getKt());
+                    verschluesseler.setS(optionString);
+                    verschluesseler.entschluesseln();
+                    System.out.println("Der Klartext ist " + verschluesseler.getKt());
                 }
         }
     }
