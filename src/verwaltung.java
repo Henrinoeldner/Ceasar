@@ -18,18 +18,22 @@ public class verwaltung {
             System.out.println("Bitte weahle mit welcher methode du verschluesseln moechtest");
             System.out.println("[1]Ceasar");
             System.out.println("[2]Vigenere");
-            System.out.println("[3]Beenden");
+            System.out.println("[3]Polybius");
+            System.out.println("[4]Beenden");
             int verschluesselungprinzip = scanner.nextInt();
             if(verschluesselungprinzip==1) {
                 verschluesseler = new Ceasar();
             }else if(verschluesselungprinzip==2){
                 verschluesseler= new Vigenere();
-            }else if (verschluesselungprinzip>2){
+            } else if (verschluesselungprinzip==3) {
+                verschluesseler=new Polybius();
+            } else if (verschluesselungprinzip>3){
                 break;
             }
                 System.out.println("Was moechtst du machen? Gib die enstsprechende Zahl an und drueck Enter. ");
-                System.out.println("[1] Ein Wort neues Wort verschluesseln (Benoetigt ein KlarText und ein Schluessel)");
-                System.out.println("[2] Ein wort neues Wort entschluesseln(benoetigt ein GeheimText und ein Schlussel)");
+                System.out.println("[1] Ein neues Wort verschluesseln (Benoetigt ein KlarText und ein Schluessel)");
+                System.out.println("[2] Ein neues Wort entschluesseln(benoetigt ein GeheimText und ein Schlussel)");
+
 
                 int option = scanner.nextInt();
                 if (option == 1) {
@@ -49,7 +53,7 @@ public class verwaltung {
                     System.out.println("Bitte gib den verschlüsselten text an. ");
                     String optionString = scanner.next();
                     verschluesseler.setGt(optionString);
-                    System.out.print("Bitte den Schlüssel an. Druecke dann Enter.");
+                    System.out.print("Bitte gib den Schlüssel an. Druecke dann Enter.");
                     if (verschluesselungprinzip==1){System.out.print("(Eine Zahl oder ein Buchstaben)");}
                     else if (verschluesselungprinzip==2) {System.out.print("(Ein Wort)");}
                     System.out.println("Druecke dann Enter.");

@@ -19,7 +19,7 @@ public class Vigenere extends Kryptomat  {
         String gSchluessel= s.toUpperCase();
         for(int i=0;i<tkt.length();i++){
             //Wandelt den Buchstaben an der Stelle i in eine Zahl um und speichert diese in h
-            int h = this.getAscif(tkt.charAt(i));
+            int h = this.getAscii(tkt.charAt(i));
             //sTemporer wird auf den asciff wert vom Buchstaben an Stelle gesetzt
             //-65 damit A=0 und %26 damit der wert in einer spaeteren Rechnung funktioniert (damit nicht groeßer als 26)
             int stemporer=( gSchluessel.charAt(i%gSchluessel.length())-65)%26;
@@ -46,7 +46,7 @@ public class Vigenere extends Kryptomat  {
         String gSchluessel= s.toUpperCase();
         for(int i=0;i<tgt.length();i++) {
             //Wandelt den Buchstaben an der Stelle i in eine Zahl um und speichert diese in h
-            int h = this.getAscif(tgt.charAt(i));
+            int h = this.getAscii(tgt.charAt(i));
             //sTemporer wird auf den asciff wert vom Buchstaben an Stelle gesetzt
             //-65 damit A=0 und %26 damit der wert in einer spaeteren Rechnung funktioniert (damit nicht groeßer als 26)
             int stemporer=(gSchluessel.charAt(i%gSchluessel.length())-65)%26;

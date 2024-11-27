@@ -15,7 +15,7 @@ public abstract class Kryptomat {
     protected char getChar(int pWert){
         return (char) pWert;
     }
-    protected int getAscif(char pWert){
+    protected int getAscii(char pWert){
         return (int) pWert;
     }
     public String getGt(){
