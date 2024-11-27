@@ -26,7 +26,7 @@ public class verwaltung {
             }else if(verschluesselungprinzip==2){
                 verschluesseler= new Vigenere();
             } else if (verschluesselungprinzip==3) {
-                verschluesseler=new Polybius();
+                verschluesseler=new Polybius_Henri();
             } else if (verschluesselungprinzip>3){
                 break;
             }

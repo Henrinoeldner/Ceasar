@@ -1,8 +1,8 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Polybius extends Kryptomat{
-    private String[][] alphabetQuadrat={{" "," "," "," "," "," "},{" ","a","b","c","d","e"},{" ","f","g","h","ij","k"},{" ","l","m","n","o","p"},{" ","q","r","s","t","u"},{" ","v","w","x","y","z"}};
-    public Polybius(){
+public class Polybius_Henri extends Kryptomat{
+    private String[][] alphabetQuadrat={{" "," "," "," "," "," "},{" ","Aa","Bb","Cc","Dd","Ee"},{" ","Ff","Gg","Hh","IHij","Kk"},{" ","Ll","Mm","Nn","Oo","Pp"},{" ","Qq","Rr","Ss","Tt","Uu"},{" ","Vv","Ww","Xx","Yy","Zz"}};
+    public Polybius_Henri(){
         gt="";
         kt="";
         s="0";
@@ -24,7 +24,14 @@ public class Polybius extends Kryptomat{
         }
     }
     public void entschluesseln(){
+        for(int i=0;i<gt.length();i+=2){
+           String supgt = gt.substring(i,i+2);
+            int speicher =Integer.valueOf(supgt);
+            kt+=alphabetQuadrat[(int)(speicher/10)][speicher%10].charAt(0);
 
+
+
+        }
     }
     private void bfmS(){}
 }
