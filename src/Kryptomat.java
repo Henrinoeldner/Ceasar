@@ -12,6 +12,11 @@ public abstract class Kryptomat {
 
     public abstract void entschluesseln();
 
+    /**
+     *
+     * @param pWert der Ascii wert des Buchstabens
+     * @return
+     */
     protected char getChar(int pWert){
         return (char) pWert;
     }
