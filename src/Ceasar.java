@@ -10,7 +10,10 @@ public class Ceasar extends Kryptomat{
         s="0";
         sc=(int)s.charAt(0);
     }
-    //verschluesseln() verschlüsselt den Klartext(kt) durch addition mit dem schlüssel(s)
+    /**
+     * setzt gt auf eine, mit Ceaser verschluesselte Version von kt.
+     * kt wird mit s addirt
+     */
     public void verschluesseln(){
         sc=(int)s.charAt(0);
         String speicher;
@@ -36,6 +39,11 @@ public class Ceasar extends Kryptomat{
 
         }
     }
+
+    /**
+     * setzt kt auf eine, mit Ceaser entschluesselte Version von gt.
+     * gt wird mit s subtrahiert
+     */
     public void entschluesseln(){
         sc=(int)s.charAt(0);
         String speicher;

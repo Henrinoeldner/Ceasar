@@ -11,7 +11,7 @@ public class Polybius_Henri extends Kryptomat{
         int ty=0;//Speichert, in welcher Zeile sich der Buchstabe befindet
         int tx=0;//Speichert, in welcher Spalte sich der Buchstabe befindet
 
-        //geht das wort buchstabe fuer Buchstabe durch
+        //geht kt Buchstabe fuer Buchstabe durch
         for (int i=0;i<kt.length();i++){
 
             //geht die Zeilen durch
@@ -21,19 +21,31 @@ public class Polybius_Henri extends Kryptomat{
                     //schaut, ob sich in der Zelle der gesuchte Buchstabe befindet.
                     //""+Kt.charAt(i) um den Char in eine sequence umzuwandeln.
                     if( alphabetQuadrat[y][x].contains(""+kt.charAt(i))){
+                        //tx und ty werden auf die position vom Buchstaben gesetzt
                         tx=x;
                         ty=y;
                     };
                 }
 
             }
+            //Wandelt tx und ty in eine zweistellige Zahl um
             gt+= (tx+ty*10);
         }
     }
+
+
     public void entschluesseln(){
+
+        //geht gt mit zweier Schritten durch
         for(int i=0;i<gt.length();i+=2){
+
+            //Erschaft ein Supstring aus zwei Buchstaben;
            String supgt = gt.substring(i,i+2);
+
+           //Wandelt den subString aupgt in eine Zahl um;
             int speicher =Integer.valueOf(supgt);
+
+            //fuegt den, zu der Zahl in speicher passenden Buchstaben nach der Polybius Tabelle kt hinzu;
             kt+=alphabetQuadrat[(int)(speicher/10)][speicher%10].charAt(0);
 
 
