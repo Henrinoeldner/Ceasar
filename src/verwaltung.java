@@ -41,11 +41,13 @@ public class verwaltung {
                 int option = scanner.nextInt();
                 if (option == 1) {
                     System.out.println("Bitte gib den zu verschluesselden text an. Druecke dann Enter");
-                    String optionString = scanner.next();
+                    String optionString =scanner.next();
+                    optionString+=scanner.nextLine();
                     verschluesseler.setKt(optionString);
                     System.out.print("Bitte gib den schluessel an");
                     if (verschluesselungprinzip==1){System.out.print("(Eine Zahl oder ein Buchstaben)");}
                     else if (verschluesselungprinzip==2) {System.out.print("(Ein Wort)");}
+                    else{System.out.print("(In diesen Fall nicht benoetigt und wird nicht benutzt, gib also einfach deine Liebling zahl an)");}
                     System.out.println("Druecke dann Enter.");
                     optionString = scanner.next();
                     verschluesseler.setS(optionString);
@@ -56,9 +58,10 @@ public class verwaltung {
                     System.out.println("Bitte gib den verschlüsselten text an. ");
                     String optionString = scanner.next();
                     verschluesseler.setGt(optionString);
-                    System.out.print("Bitte gib den Schlüssel an. Druecke dann Enter.");
+                    System.out.print("Bitte gib den Schlüssel an. ");
                     if (verschluesselungprinzip==1){System.out.print("(Eine Zahl oder ein Buchstaben)");}
                     else if (verschluesselungprinzip==2) {System.out.print("(Ein Wort)");}
+                    else{System.out.print("(In diesen Fall nicht benoetigt und wird nicht benutzt, gib also einfach deine Liebling zahl an)");}
                     System.out.println("Druecke dann Enter.");
                     optionString = scanner.next();
                     verschluesseler.setS(optionString);
