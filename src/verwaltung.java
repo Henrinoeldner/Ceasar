@@ -18,9 +18,10 @@ public class verwaltung {
             System.out.println("Bitte weahle mit welcher methode du verschluesseln moechtest");
             System.out.println("[1]Ceasar");
             System.out.println("[2]Vigenere");
-            System.out.println("[3]Vigenere(die von Herr Horn gewuenschte version");
+            System.out.println("[3]Polybius(die von Herr Horn gewuenschte version");
             System.out.println("[4]Polybius(Henris version(Die Bessere :] ))");
-            System.out.println("[5]Beenden");
+            System.out.println("[5]Play Fair");
+            System.out.println("[6]Beenden");
             int verschluesselungprinzip = scanner.nextInt();
             if(verschluesselungprinzip==1) {
                 verschluesseler = new Ceasar();
@@ -30,7 +31,9 @@ public class verwaltung {
                 verschluesseler= new Polybius();
             } else if (verschluesselungprinzip==4) {
                 verschluesseler=new Polybius_Henri();
-            } else if (verschluesselungprinzip>4){
+            }else if (verschluesselungprinzip==5) {
+                verschluesseler=new Play_Fair();
+            }  else if (verschluesselungprinzip>5){
                 break;
             }
                 System.out.println("Was moechtst du machen? Gib die enstsprechende Zahl an und drueck Enter. ");

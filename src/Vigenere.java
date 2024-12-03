@@ -2,7 +2,6 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Vigenere extends Kryptomat {
 
-    private String s;
 
     public Vigenere() {
         gt = "";

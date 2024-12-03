@@ -15,7 +15,7 @@ public class Ceasar extends Kryptomat{
      * kt wird mit s addirt
      */
     public void verschluesseln(){
-        sc=(int)s.charAt(0);
+        sc=(int)s.charAt(0)%65;
         String speicher;
         //geheimtext wird gelehrt
         gt="";
@@ -45,7 +45,7 @@ public class Ceasar extends Kryptomat{
      * gt wird mit s subtrahiert
      */
     public void entschluesseln(){
-        sc=(int)s.charAt(0);
+        sc=(int)s.charAt(0)%65;
         String speicher;
         //der Klartext(kt) wird gelehrt
         kt="";
