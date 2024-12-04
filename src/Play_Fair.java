@@ -9,40 +9,45 @@ public class Play_Fair extends Kryptomat{
     }
     public void verschluesseln(){
         bfmS();
-        for(int i=1;i<kt.length()-1;i++){
-            if (gt.charAt(i)==gt.charAt(i+1)){
-                if(gt.charAt(i)=='X') {
-                    gt = gt.substring(0, i + 1) + 'Y' + gt.substring(i + 1);
+        kt=kt.toUpperCase();
+        for(int i=0;i<kt.length()-1;i+=2){
+            if (kt.charAt(i)==kt.charAt(i+1)){
+                if(kt.charAt(i)=='X') {
+                    kt = kt.substring(0, i + 1) + 'Y' + kt.substring(i + 1);
                 }else{
-                    gt = gt.substring(0, i + 1) + 'X' + gt.substring(i + 1);
+                    kt = kt.substring(0, i + 1) + 'X' + kt.substring(i + 1);
                 }
             }
 
         }
-        int ty=0;//Speichert, in welcher Zeile sich der Buchstabe befindet
-        int tx=0;//Speichert, in welcher Spalte sich der Buchstabe befindet
-
-        //geht kt Buchstabe fuer Buchstabe durch
-        for (int i=0;i<kt.length();i++){
-        tx=0;
-        ty=1;
-            //geht die Zeilen durch
-            for(int y=1;y<6;y++){
-                //geht die Spalten durch
-                for(int x=0;x<6;x++){
-                    //schaut, ob sich in der Zelle der gesuchte Buchstabe befindet.
-                    //""+Kt.charAt(i) um den Char in eine sequence umzuwandeln.
-                    //if( alphabetQuadrat[y][x].contains(""+kt.charAt(i))){
-                        //tx und ty werden auf die position vom Buchstaben gesetzt
-                        tx=x;
-                        ty=y;
-                    //};
-                }
-
+        if (kt.length()%2==1){
+            if (kt.charAt(kt.length()-1)=='X'){
+                kt+='Y';
+            }else{
+                kt+='X';
             }
-            //Wandelt tx und ty in eine zweistellige Zahl um
-            gt+= (tx+ty*10);
         }
+        int[] firstBuchstabe;
+        int[] secondBuchstabe;
+        for (int i=0;i<kt.length();i+=2){
+            firstBuchstabe=findplaceinArray(i);
+
+        }
+    }
+
+    public int[] findplaceinArray(int pBuchstabe) {
+        int[] placeinArray = new int[2];
+        for (int i = 0; i < kt.length(); i++) {
+            for (int y = 0; y < 5; y++) {
+                for (int x = 0; x < 5; x++) {
+                    if (alphabetQuadrat[y][x] == kt.charAt(i)) {
+                        placeinArray[0] = x;
+                        placeinArray[i] = y;
+                    }
+                }
+            }
+        }
+        return placeinArray;
     }
 
 
