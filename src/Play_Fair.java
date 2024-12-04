@@ -9,6 +9,16 @@ public class Play_Fair extends Kryptomat{
     }
     public void verschluesseln(){
         bfmS();
+        for(int i=1;i<kt.length()-1;i++){
+            if (gt.charAt(i)==gt.charAt(i+1)){
+                if(gt.charAt(i)=='X') {
+                    gt = gt.substring(0, i + 1) + 'Y' + gt.substring(i + 1);
+                }else{
+                    gt = gt.substring(0, i + 1) + 'X' + gt.substring(i + 1);
+                }
+            }
+
+        }
         int ty=0;//Speichert, in welcher Zeile sich der Buchstabe befindet
         int tx=0;//Speichert, in welcher Spalte sich der Buchstabe befindet
 
@@ -59,19 +69,22 @@ public class Play_Fair extends Kryptomat{
     private void bfmS(){
 
         alphabetQuadrat=new int[5][5];
-        int asciibuchstabe=64;
+        int asciibuchstabe=65;
+        int platzimarray=0;
         s=s.toUpperCase();
         if (s.contains(""+'J')){
             s=s.replace('J','I');
         }
         for (int i=0;i<s.length()-1;i++){
             if(!s.substring(i+1).contains(""+s.charAt(i))){
-                alphabetQuadrat[i/5][i%5]=getAscii(s.charAt(i));
-            }else{i++;}
+                alphabetQuadrat[platzimarray/5][platzimarray%5]=getAscii(s.charAt(i));
+                platzimarray++;
+            }
         }
-        alphabetQuadrat[(s.length()-1)/5][(s.length()-1)%5]=getAscii(s.charAt(s.length()-1));
-        for(int y =s.length()/5;y<5;y++){
-            for (int x=s.length()%5;x<5;x++){
+        alphabetQuadrat[platzimarray/5][platzimarray%5]=getAscii(s.charAt(s.length()-1));
+        platzimarray++;
+        for(int y =platzimarray/5;y<5;y++){
+            for (int x=platzimarray%5;x<5;x++){
                 while (s.contains(""+getChar(asciibuchstabe))){
                    asciibuchstabe++;
                 }
@@ -82,6 +95,7 @@ public class Play_Fair extends Kryptomat{
                 asciibuchstabe++;
 
             }
+            platzimarray=0;
         }
     }
 }
