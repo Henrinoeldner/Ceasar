@@ -10,12 +10,14 @@ public class Play_Fair extends Kryptomat{
     public void verschluesseln(){
         bfmS();
         kt=kt.toUpperCase();
+
+        //Sortg dafuer, dass doppelte Buchstaben im wort dur X getrennt werden
         for(int i=0;i<kt.length()-1;i+=2){
             if (kt.charAt(i)==kt.charAt(i+1)){
                 if(kt.charAt(i)=='X') {
-                    kt = kt.substring(0, i + 1) + 'Y' + kt.substring(i + 1);
+                    kt = kt.substring(0, i + 1) + "YY" + kt.substring(i + 1);
                 }else{
-                    kt = kt.substring(0, i + 1) + 'X' + kt.substring(i + 1);
+                    kt = kt.substring(0, i + 1) + "XX" + kt.substring(i + 1);
                 }
             }
 
@@ -30,23 +32,36 @@ public class Play_Fair extends Kryptomat{
         int[] firstBuchstabe;
         int[] secondBuchstabe;
         for (int i=0;i<kt.length();i+=2){
-            firstBuchstabe=findplaceinArray(i);
+            firstBuchstabe=findplaceinArray(kt.charAt(i));
+            secondBuchstabe=findplaceinArray(kt.charAt(i+1));
+            //wenn in selber Zeile
+            if(firstBuchstabe[0]==secondBuchstabe[0]){
+            gt+=getChar(alphabetQuadrat[firstBuchstabe[0]][(firstBuchstabe[1]+1)%5]) ;
+            gt+=getChar(alphabetQuadrat[secondBuchstabe[0]][(secondBuchstabe[1]+1)%5]);
+            }//wenn in selber Spalte
+            else if (firstBuchstabe[1]==secondBuchstabe[1]){
+                gt+=getChar( alphabetQuadrat[(firstBuchstabe[0]+1)%5][firstBuchstabe[1]]);
+                gt+=getChar(alphabetQuadrat[(secondBuchstabe[0]+1)%5][secondBuchstabe[1]]) ;
 
+
+            }else{
+                gt+=getChar(alphabetQuadrat[firstBuchstabe[0]][secondBuchstabe[1]]) ;
+                gt+=getChar(alphabetQuadrat[secondBuchstabe[0]][firstBuchstabe[1]]) ;
+
+            }
         }
     }
 
     public int[] findplaceinArray(int pBuchstabe) {
         int[] placeinArray = new int[2];
-        for (int i = 0; i < kt.length(); i++) {
             for (int y = 0; y < 5; y++) {
                 for (int x = 0; x < 5; x++) {
-                    if (alphabetQuadrat[y][x] == kt.charAt(i)) {
-                        placeinArray[0] = x;
-                        placeinArray[i] = y;
+                    if (alphabetQuadrat[y][x] == pBuchstabe) {
+                        placeinArray[0] = y;
+                        placeinArray[1] = x;
                     }
                 }
             }
-        }
         return placeinArray;
     }
 
@@ -54,19 +69,26 @@ public class Play_Fair extends Kryptomat{
     public void entschluesseln(){
         bfmS();
         //geht gt mit zweier Schritten durch
+        int[] firstBuchstabe;
+        int[] secondBuchstabe;
         for(int i=0;i<gt.length();i+=2){
-            String supgt;
-            //Erschaft ein Supstring aus zwei Buchstaben;
-            if(i+2<gt.length()) {
-                supgt = gt.substring(i, i + 2);
-            }else
-            {supgt = gt.substring(i);}
-           //Wandelt den subString aupgt in eine Zahl um;
-            int speicher =Integer.valueOf(supgt);
+            firstBuchstabe=findplaceinArray(gt.charAt(i));
+            secondBuchstabe=findplaceinArray(gt.charAt(i+1));
+            //wenn in selber Zeile
+            if(firstBuchstabe[0]==secondBuchstabe[0]){
+                kt+=getChar(alphabetQuadrat[firstBuchstabe[0]][(firstBuchstabe[1]-1)%5]) ;
+                kt+=getChar(alphabetQuadrat[secondBuchstabe[0]][(secondBuchstabe[1]-1)%5]);
+            }//wenn in selber Spalte
+            else if (firstBuchstabe[1]==secondBuchstabe[1]){
+                kt+=getChar( alphabetQuadrat[(firstBuchstabe[0]-1)%5][firstBuchstabe[1]]);
+                kt+=getChar(alphabetQuadrat[(secondBuchstabe[0]-1)%5][secondBuchstabe[1]]) ;
 
-            //fuegt den, zu der Zahl in speicher passenden Buchstaben nach der Polybius Tabelle kt hinzu;
-            //kt+=alphabetQuadrat[(int)(speicher/10)][speicher%10].charAt(0);
 
+            }else{
+                kt+=getChar(alphabetQuadrat[firstBuchstabe[0]][secondBuchstabe[1]]) ;
+                kt+=getChar(alphabetQuadrat[secondBuchstabe[0]][firstBuchstabe[1]]) ;
+
+            }
 
 
         }
