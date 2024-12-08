@@ -89,9 +89,9 @@ public class Play_Fair extends Kryptomat{
                 kt+=getChar(alphabetQuadrat[secondBuchstabe[0]][firstBuchstabe[1]]) ;
 
             }
-
-
         }
+        kt=kt.replace("XX","");
+        kt=kt.replace("YY","");
     }
     private void bfmS(){
 
