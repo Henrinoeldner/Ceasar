@@ -33,7 +33,9 @@ public class verwaltung {
                 verschluesseler=new Polybius_Henri();
             }else if (verschluesselungprinzip==5) {
                 verschluesseler=new Play_Fair();
-            }  else if (verschluesselungprinzip>5){
+            }else if (verschluesselungprinzip==6) {
+                verschluesseler=new Drehraster();
+            } else if (verschluesselungprinzip>6){
                 break;
             }
                 System.out.println("Was moechtst du machen? Gib die enstsprechende Zahl an und drueck Enter. ");
