@@ -35,7 +35,9 @@ public class verwaltung {
                 verschluesseler=new Play_Fair();
             }else if (verschluesselungprinzip==6) {
                 verschluesseler=new Drehraster();
-            } else if (verschluesselungprinzip>6){
+            }else if (verschluesselungprinzip==7) {
+                verschluesseler=new Dual();
+            } else if (verschluesselungprinzip>7){
                 break;
             }
                 System.out.println("Was moechtst du machen? Gib die enstsprechende Zahl an und drueck Enter. ");

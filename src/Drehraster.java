@@ -1,5 +1,11 @@
 public class Drehraster extends Kryptomat{
     private char[][]Quadrat;
+
+    public Drehraster(){
+        gt="";
+        kt="";
+        s="0";
+    }
     public void verschluesseln(){
         int is;
         int wo=0;
@@ -9,6 +15,11 @@ public class Drehraster extends Kryptomat{
             for (int x=0;x<is;x++){
                 Quadrat[y][x]=kt.charAt(wo);
                 wo++;
+            }
+        }
+        for(int x=0;x<is;x++){
+            for (int y=0;y<kt.length()/is;y++){
+                gt+=Quadrat[y][x];
             }
         }
     }
