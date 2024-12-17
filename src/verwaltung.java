@@ -21,7 +21,9 @@ public class verwaltung {
             System.out.println("[3]Polybius(die von Herr Horn gewuenschte version");
             System.out.println("[4]Polybius(Henris version(Die Bessere :] ))");
             System.out.println("[5]Play Fair");
-            System.out.println("[6]Beenden");
+            System.out.println("[6]Play Fair");
+            System.out.println("[7]Play Fair");
+            System.out.println("[8]Beenden");
             int verschluesselungprinzip = scanner.nextInt();
             if(verschluesselungprinzip==1) {
                 verschluesseler = new Ceasar();
@@ -52,8 +54,8 @@ public class verwaltung {
                     optionString+=scanner.nextLine();
                     verschluesseler.setKt(optionString);
                     System.out.print("Bitte gib den schluessel an");
-                    if (verschluesselungprinzip==1){System.out.print("(Eine Zahl oder ein Buchstaben)");}
-                    else if (verschluesselungprinzip==2) {System.out.print("(Ein Wort)");}
+                    if (verschluesselungprinzip==1||verschluesselungprinzip==6){System.out.print("(Eine Zahl");}
+                    else if (verschluesselungprinzip==2||verschluesselungprinzip==5) {System.out.print("(Ein Wort)");}
                     else{System.out.print("(In diesen Fall nicht benoetigt und wird nicht benutzt, gib also einfach deine Liebling zahl an)");}
                     System.out.println("Druecke dann Enter.");
                     optionString = scanner.next();

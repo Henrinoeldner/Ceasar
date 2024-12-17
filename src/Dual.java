@@ -15,11 +15,14 @@ public class Dual extends Kryptomat {
             if (speicher+Math.pow(2,6-b)<=getAscii(kt.charAt(i))){
                 Quadrat[i][b]=1;
                 speicher+=Math.pow(2,6-b);
+                gt+=1;
             }else{
                 Quadrat[i][b]=0;
+                gt+=0;
             }
        }
     }
+
 
     }
 
